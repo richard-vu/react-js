@@ -5,14 +5,14 @@ import Header from "../../common/header/Header";
 import BaseComponent from "./base-component/BaseComponent";
 import Card from "./card/Card";
 import Map from "./map/Map";
-import Sign from "./sign/Sign";
-import UserLists from "./user-lists/UserLists";
+import ListUsers from "./list-users/ListUsers";
 import Footer from "../../common/footer/Footer";
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      titleButton: "Show list users",
       showHide: 0,
       signStatus: 0,
       count: 0,
@@ -29,17 +29,17 @@ export default class Home extends Component {
 
   checkSign = () => {
     if (this.state.showHide !== 0) {
-      return <UserLists />;
+      return <ListUsers />;
     }
     return;
   };
 
-  saveUser = () => {
-    this.setState({ showHide: 1 });
+  showListUsers = () => {
+    this.setState({ showHide: 1, titleButton: "Hide list users" });
   };
 
-  saveUser_2 = () => {
-    this.setState({ showHide: 0 });
+  hideListUsers = () => {
+    this.setState({ showHide: 0,titleButton: "Show list users" });
   };
 
   render() {
@@ -54,28 +54,31 @@ export default class Home extends Component {
         <div className="text-center home-align">
           <Map />
         </div>
-        <div className="row border home-align">
-          <Sign saveUser={this.saveUser} />
-        </div>
+
         <div className="row text-center home-align">
           <div className="col-12">
-            <div className="btn-group" role="group">
-              <button className="btn btn-primary" onClick={this.saveUser}>
-                {this.state.showHide === 0
-                  ? "Show list users"
-                  : "Hide list users"}
-              </button>
-
-              <button className="btn btn-primary" onClick={this.saveUser_2}>
-                {this.state.showHide === 0
-                  ? "Hide list users"
-                  : "Show list users"}
+            <div className="btn btn-group" role="group">
+              <button
+                className="btn btn-primary"
+                onClick={() => {
+                  if (this.state.showHide === 0) {
+                    this.showListUsers();
+                  } else {
+                    this.hideListUsers();
+                  }
+                }}
+              >
+                {this.state.titleButton}
               </button>
             </div>
           </div>
         </div>
         <div className="row">{this.checkSign()}</div>
-
+        <div className="row">
+          <a href="/#" className="col-12 text-right">
+            Back to top
+          </a>
+        </div>
         <Footer />
       </div>
     );

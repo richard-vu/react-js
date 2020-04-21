@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardComponentFunctionComponent.css";
+import "./CardFunctionComponent.css";
 
 function notify() {
   alert("Welcome to Mương 14");
@@ -9,7 +9,7 @@ function notify_2(x) {
   alert("Welcome to Mương 14 " + x);
 }
 
-export default function CardComponentFunctionComponent(props) {
+export default function CardFunctionComponent(props) {
   return (
     <div className="col-md-4 col-sm-12">
       <div className="card text-center card-class-component">

@@ -1,9 +1,9 @@
-.card-component{
+.card-class-component{
     margin: auto;
     width: 100%;
 }
 
 .card-img-component{
     margin: auto;
-    height: 1000px;
+    height: 300px;
 }

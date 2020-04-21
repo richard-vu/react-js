@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ComponentFunctionDefault from "../../../components/home/base-componet/component-function-default/ComponentFunctionDefault";
-import ComponentClass from "../../../components/home/base-componet/component-class/ComponentClass"
-import ComponentArrowFunction from "../../../components/home/base-componet/component-arrow-function/ComponentArrowFunction"
-import ComponentAnonymousFunction from '../../../components/home/base-componet/component-anonymous-function/ComponentAnonymousFunction'
-import "./BaseComponent.css"
+import ComponentFunctionDefault from "./component-function-default/ComponentFunctionDefault";
+import ComponentClass from "./component-class/ComponentClass";
+import ComponentArrowFunction from "./component-arrow-function/ComponentArrowFunction";
+import ComponentAnonymousFunction from "./component-anonymous-function/ComponentAnonymousFunction";
+import "./BaseComponent.css";
 
 export default class BaseComponent extends Component {
   render() {
