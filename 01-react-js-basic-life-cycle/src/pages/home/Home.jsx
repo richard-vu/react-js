@@ -15,6 +15,18 @@ export default class Home extends Component {
     console.log("componentDidMount was runned");
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    
+  }
+
+  //WARNING! To be deprecated in React v17. Use componentDidUpdate instead.
+  componentWillUpdate(nextProps, nextState) {
+    
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    
+  }
   render() {
     const { isFetching } = this.state;
     console.log("Render!");
